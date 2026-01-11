@@ -6,6 +6,12 @@ services:
       - "9094:9091"
     volumes:
       - ./data:/app/data
+    environment:
+      - DEBUG=false
+      - HOST_DETAILS=false
+      - HTTP_DISCOVERY=false
+      - LISTEN_ADDRESS=:9091
+      - TOKEN_FILE=/app/data/token.json
     networks:
       - zethis
     restart: unless-stopped
