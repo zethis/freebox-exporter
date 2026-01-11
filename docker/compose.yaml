@@ -1,0 +1,15 @@
+services:
+  freebox-exporter:
+    build: .
+    container_name: freebox-exporter
+    ports:
+      - "9094:9091"
+    volumes:
+      - ./data:/app/data
+    networks:
+      - zethis
+    restart: unless-stopped
+
+networks:
+  zethis:
+    external: true
